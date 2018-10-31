@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
-const Header = props => {
+const Footer = props => {
     return (
-        <View style={styles.headerStyle}>
-            <Text style={styles.textStyle}>{props.headerText}</Text>
+        <View style={styles.footerStyle}>
+            <Text style={styles.textStyle}>{props.footerText}</Text>
         </View>
     )
 };
 
 const styles = {
-    headerStyle: {
+    footerStyle: {
         backgroundColor: "#F8F8F8",
         justifyContent: "center",
         alignItems: "center",
-        height: 60,
-        paddingTop: 30,
+        height: 25,
+        paddingTop: 1,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
@@ -23,7 +23,7 @@ const styles = {
         position: "relative"
         },
         textStyle: {
-        fontSize: 20
+        fontSize: 12
         },
         iconPosition: {
         flex: 1,
@@ -34,4 +34,4 @@ const styles = {
         }
     };
 
-export default Header;
+export default Footer;

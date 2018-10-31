@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
-const Header = props => {
+const ThreeCard = props => {
     return (
-        <View style={styles.headerStyle}>
-            <Text style={styles.textStyle}>{props.headerText}</Text>
+        <View style={styles.threeStyle}>
+            <Text style={styles.textStyle}>{props.threeText}</Text>
         </View>
     )
 };
 
 const styles = {
-    headerStyle: {
+    threeStyle: {
         backgroundColor: "#F8F8F8",
         justifyContent: "center",
         alignItems: "center",
@@ -34,4 +34,4 @@ const styles = {
         }
     };
 
-export default Header;
+export default ThreeCard;
