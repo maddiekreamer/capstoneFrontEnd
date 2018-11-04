@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import { Text, View, Button, TextInput } from 'react-native';
+import Cards from "./Cards.js"
 
 class ThreeCard extends Component { 
     state = {
-        question: ""
+        question: "",
+        displayText: ""
     }
     
     handleQuestion = text => {
+        console.log(text)
         this.setState({ 
             question: text 
         })
     }
+
+    // submitAndClear = () => {
+    //     this.props.handleQuestion(this.state.question)
+    //     this.setState({
+    //         text: ''
+    //     })
+    // }
 
     render(){
         return (
@@ -22,12 +32,16 @@ class ThreeCard extends Component {
                         placeholder="Enter question here:"
                         value={this.state.question}
                         onChangeText={this.handleQuestion}
+                        ref={input => {this.TextInput = input}}
                     />
-                    <Button title="Add" style={{color: 'black', width:200}}
+                    <Button title="Enter" style={{color: 'black', width:200}}
                         onPress={() => {
-                            alert('you did it')
+                            this.setState({displayText: this.state.question})
+                            // {this.submitAndClear}
                         }}
+                        
                     />
+                    <Text>{this.state.displayText}</Text>
                 </View>
             </View>
         )
