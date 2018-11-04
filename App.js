@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
-// import ThreeCard from './components/ThreeCard';
+import ThreeCard from './components/ThreeCard';
 import Footer from './components/Footer';
 
 export default class App extends Component {
@@ -9,7 +9,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Header headerText="Tarot Readings"/>
-        {/* <ThreeCard threeText="testing"/> */}
+        <ThreeCard />
         <Footer footerText="Copyright 2018"/>
       </View>
     );

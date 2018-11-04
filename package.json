@@ -1,5 +1,5 @@
 {
-  "name": "capstoneProject",
+  "name": "capstoneproject",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -18,5 +18,17 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maddiekreamer/capstoneFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maddiekreamer/capstoneFrontEnd/issues"
+  },
+  "homepage": "https://github.com/maddiekreamer/capstoneFrontEnd#readme",
+  "description": ""
 }
