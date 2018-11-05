@@ -3,24 +3,22 @@ import { Text, View } from 'react-native';
 import Cards from "./Cards.js";
 
 class ThreeCard extends Component { 
-    state = {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+        tarotCards: [],
         question: "",
         displayText: ""
+        }
     }
-    
+
     handleQuestion = text => {
         this.setState({ 
             question: text 
         })
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        tarotCards: []
-        }
-    }
-    
     componentDidMount() {
         this.getCards()
     }
@@ -28,18 +26,25 @@ class ThreeCard extends Component {
     getCards = () => {
         fetch("https://tarot-card-information.herokuapp.com/")
             .then(resp => resp.json())
-            .then(resp => this.setState({
-                tarotCards: resp
-            }))
+            .then((resp) =>  this.setState({
+                    tarotCards: resp.result
+                }))
     }
 
     render() {
+        const fetchCards = this.state.tarotCards ? 
+        this.state.tarotCards.map(cards => {
+            return (
+                <Cards 
+                {...cards}
+                />
+            )
+        }) : "loading Cards"
         return (
-            <Text>
-                {this.state.tarotCards.map(Cards => {
-                    return <Cards Cards={cards}></Cards>
-                })}
-            </Text> 
+            
+                <Text>
+                {fetchCards}
+                </Text> 
         )}
 }
 

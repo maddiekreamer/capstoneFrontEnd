@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
-class Cards extends Component {
+const Cards = ({name, desc, img}) =>{
 
-    render() {
         return (
-            <Text>
-                <ul>
-                    <li>{this.props.result.name}</li>
-                    <li>{this.props.result.type}</li>
-                    <li>{this.props.result.img}</li>
-                    <li>{this.props.result.desc}</li>
-                </ul>
-            </Text>
+                <Text>
+                    {name} {desc}
+                </Text>
         )
     }
-}
+
 
 const styles = {
     // cardsStyle: {
