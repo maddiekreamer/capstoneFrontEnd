@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import Header from './components/Header';
 import ThreeCard from './components/ThreeCard';
 import Footer from './components/Footer';
@@ -10,7 +10,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Header headerText="Tarot Readings"/>
-        <ThreeCard />
+        <ThreeCard/>
         <Footer footerText="Copyright 2018"/>
       </View>
     );
