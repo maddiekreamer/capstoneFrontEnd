@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, ScrollView, TextInput } from 'react-native';
 import Cards from "./Cards.js";
 
 class ThreeCard extends Component { 
@@ -41,10 +41,14 @@ class ThreeCard extends Component {
             )
         }) : "loading Cards"
         return (
-            
-                <Text>
+            <ScrollView>
+                <TextInput
+                style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                onChangeText={(text) => this.setState({text})}
+                value={this.state.text}
+                />
                 {fetchCards}
-                </Text> 
+            </ScrollView>
         )}
 }
 
