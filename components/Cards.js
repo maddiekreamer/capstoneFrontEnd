@@ -4,14 +4,18 @@ import CardSection from './CardSection';
 import Card from './Card';
 import TarotCards from './TarotCards'
 
-const Cards = ({name, desc, img, type}) =>{
+const Cards = ({name, desc, img, type, toggleSelection, flipped, index}) =>{
+
+  pressedCard = () => {
+    console.log(this.state.tarotCards)
+    this.setState.tarotCards
+  }
 
         return (
-          <Card style={{ paddingTop: 5 }}>
-            <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} />
-            {/* <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} />
-            <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} /> */}
-          {/* </View> */}
+          <Card style={{ paddingTop: 5 }}  >
+            <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} onTouchStart={toggleSelection}>
+            <Text>{index === flipped ? 'SUCCESS' : 'OH NOES ' + flipped}</Text>
+            </View>
           </Card>
         )
     }
