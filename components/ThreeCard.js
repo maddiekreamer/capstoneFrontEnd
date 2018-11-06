@@ -21,17 +21,6 @@ class ThreeCard extends Component {
         })
     }
 
-    componentDidMount() {
-        this.getCards()
-    }
-    
-    getCards = () => {
-        fetch("https://tarot-card-information.herokuapp.com/")
-            .then(resp => resp.json())
-            .then((resp) =>  this.setState({
-                    tarotCards: resp.result
-                }))
-    }
     displayQuestion = () => {
         console.log("name:", this.state.showQuestion)
         if(this.state.showQuestion == false) {
@@ -39,6 +28,23 @@ class ThreeCard extends Component {
             } else {
                 this.setState({showQuestion: false})
             }
+    }
+
+    componentDidMount() {
+        this.getCards()
+    }
+    
+    getCards = () => {
+        fetch("https://tarot-card-information.herokuapp.com/")
+            .then(resp => resp.json())
+            .then((resp) =>  
+                {for(let i=0; i<3; i++) {
+                        this.setState({
+                            tarotCards: this.state.tarotCards.concat(
+                                resp.result[i]
+                            )
+                        })
+                    }})
     }
 
     render() {
@@ -65,13 +71,16 @@ class ThreeCard extends Component {
                 onPress={this.displayQuestion}
                 title="Enter"
                 />
+                <Text>PAST ∙ PRESENT ∙ FUTURE</Text>
                 <View>
                     {this.state.showQuestion ?
                     <Text>test: {this.state.question}</Text>
                     : null
                 }
                 </View>
+                <View style={{flex: 1, flexDirection: 'row', justifyContent: 'center', marginLeft: 3.5, marginTop: 100}}>
                 {fetchCards}
+                </View>
             </ScrollView>
         )}
 }
