@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, TextInput, Button } from 'react-native';
+import { Text, ScrollView, TextInput, Button, View } from 'react-native';
 import Cards from "./Cards.js";
 
 class ThreeCard extends Component { 
@@ -9,11 +9,13 @@ class ThreeCard extends Component {
         this.state = {
         tarotCards: [],
         question: "",
-        displayText: ""
+        displayText: "",
+        showQuestion: false
         }
     }
 
-    handleQuestion = text => {
+    handleQuestion = (text) => {
+        console.log('text: ', text)
         this.setState({ 
             question: text 
         })
@@ -30,6 +32,14 @@ class ThreeCard extends Component {
                     tarotCards: resp.result
                 }))
     }
+    displayQuestion = () => {
+        console.log("name:", this.state.showQuestion)
+        if(this.state.showQuestion == false) {
+            this.setState({showQuestion: true})
+            } else {
+                this.setState({showQuestion: false})
+            }
+    }
 
     render() {
         const fetchCards = this.state.tarotCards ? 
@@ -40,19 +50,26 @@ class ThreeCard extends Component {
                 />
             )
         }) : "loading Cards"
+
+        console.log('state: ', this.state.question)
         return (
             <ScrollView>
-                <Text>Think of a question...</Text>
+                <Text style={{marginTop: 40}}>Think of a question...</Text>
                 <TextInput
                 style={{width: 300, borderColor: 'black', borderWidth: 1}}
                 value={this.state.question}
-                onChangeText={this.handleQuestion}
+                onChangeText={(event) => this.handleQuestion(event)}
                 />
                 <Button
-                onPress={this.handleQuestion}
+                onPress={this.displayQuestion}
                 title="Enter"
                 />
-                <Text>{this.state.displayText}</Text>
+                <View>
+                    {this.state.showQuestion ?
+                    <Text>{this.state.question}</Text>
+                    : null
+                }
+                </View>
                 {fetchCards}
             </ScrollView>
         )}

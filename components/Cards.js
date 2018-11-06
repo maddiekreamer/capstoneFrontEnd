@@ -7,6 +7,11 @@ const Cards = ({name, desc, img, type}) =>{
 
         return (
           <Card style={{ paddingTop: 5 }}>
+          <View style={{flex: 1, flexDirection: 'row', marginLeft: 3.5, marginTop: 100}}>
+            <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} />
+            <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} />
+            <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} />
+          </View>
             <CardSection>
               <View>
                   <Text style={styles.headerTextStyle}>{name}: </Text>
