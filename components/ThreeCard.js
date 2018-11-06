@@ -11,7 +11,7 @@ class ThreeCard extends Component {
       displayText: "",
       showQuestion: false,
       selectedCards: [],
-      flipped: 0
+      flipped: [false, false, false]
     };
   }
 
@@ -66,13 +66,13 @@ class ThreeCard extends Component {
           style={{ width: 300, borderColor: "black", borderWidth: 1 }}
           value={this.state.question}
           onChangeText={event => this.handleQuestion(event)}
-          ref={input => { this.textInput = input }}
         />
         <Button onPress={this.displayQuestion} title="Enter" />
-        <Text>PAST ∙ PRESENT ∙ FUTURE</Text>
         <View>
           {this.state.showQuestion ? <Text>{this.state.question}</Text> : null}
         </View>
+        <Text style={styles.PPF}>PAST ∙ PRESENT ∙ FUTURE</Text>
+        
         <View
           style={{
             flex: 1,
@@ -87,6 +87,16 @@ class ThreeCard extends Component {
       </ScrollView>
     );
   }
+}
+
+const styles = {
+    PPF: {
+        fontSize: 20,
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignContent: "center"
+    }
 }
 
 export default ThreeCard;
