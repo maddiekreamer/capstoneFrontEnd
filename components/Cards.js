@@ -5,6 +5,8 @@ import Card from './Card';
 
 const Cards = ({name, desc, img, type}) =>{
 
+
+
         return (
           <Card style={{ paddingTop: 5 }}>
           <View style={{flex: 1, flexDirection: 'row', marginLeft: 3.5, marginTop: 100}}>
@@ -12,19 +14,19 @@ const Cards = ({name, desc, img, type}) =>{
             <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} />
             <View style={{width: 112, height: 200, margin: 5, backgroundColor: 'powderblue'}} />
           </View>
-            <CardSection>
+          <CardSection>
               <View>
                   <Text style={styles.headerTextStyle}>{name}: </Text>
               </View>
               <View>
                   <Text style={styles.headerTextStyle}>{type}</Text>
               </View>
-            </CardSection>
+            </CardSection> 
             <Image style={styles.imageStyle} source={{ uri: img }} />
             <CardSection>
               <View>
                 <Text style={styles.descText}>{desc}</Text>
-              </View>
+              </View> 
             </CardSection>
           </Card>
         )

@@ -53,6 +53,7 @@ class ThreeCard extends Component {
 
         console.log('state: ', this.state.question)
         return (
+            
             <ScrollView>
                 <Text style={{marginTop: 40}}>Think of a question...</Text>
                 <TextInput
@@ -66,7 +67,7 @@ class ThreeCard extends Component {
                 />
                 <View>
                     {this.state.showQuestion ?
-                    <Text>{this.state.question}</Text>
+                    <Text>test: {this.state.question}</Text>
                     : null
                 }
                 </View>

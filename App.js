@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header headerText="Tarot Readings"/>
+        <Header headerText="T A R O T ∙ F Y"/>
         <ThreeCard/>
         <Footer footerText="Copyright 2018"/>
       </View>
