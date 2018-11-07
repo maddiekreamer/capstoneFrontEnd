@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, ScrollView, TextInput, Button, View } from "react-native"
+import { Text, ScrollView, TextInput, TouchableHighlight, View } from "react-native"
 import Cards from "./Cards.js"
 
 class ThreeCard extends Component {
@@ -17,13 +17,14 @@ class ThreeCard extends Component {
 
   handleQuestion = text => {
     this.setState({
-      question: text
+      question: text,
+      displayText: text
     })
   }
 
   displayQuestion = () => {
     if (this.state.showQuestion == false) {
-      this.setState({ showQuestion: true })
+      this.setState({ question: "", showQuestion: true })
     } else {
       this.setState({ showQuestion: false })
     }
@@ -64,26 +65,31 @@ class ThreeCard extends Component {
 
     return (
       <ScrollView>
+        <View style={styles.wholePage}>
         <Text style={styles.questionStyle}>Think of a question...</Text>
         <TextInput
-          style={{ width: 362, margin: 5, borderColor: "white", borderWidth: 1, alignItems: "center" }}
+          style={{ height: 27, width: 315, marginLeft: 30, borderColor: "white", borderWidth: 1, color: "white", marginTop: 12, padding: 5 }}
           value={this.state.question}
           onChangeText={event => this.handleQuestion(event)}
         />
-        <Button onPress={this.displayQuestion} title="Enter"/>
+        <View style={styles.container}><TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text>Enter</Text></TouchableHighlight></View>
         <View>
-          {this.state.showQuestion ? <Text>{this.state.question}</Text> : null}
+          {this.state.showQuestion ? <Text style={{ color: "white" }}>{this.state.displayText}</Text> : null}
         </View>
-        <Text style={styles.pff}>PAST PRESENT FUTURE</Text>
+        <View style={{flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+        <Text style={styles.past}>PAST</Text>
+        <Text style={styles.present}>PRESENT</Text>
+        <Text style={styles.future}>FUTURE</Text>
+        </View>
         <View
           style={{
             flex: 1,
             flexDirection: "row",
             justifyContent: "center",
-            marginTop: 75
           }}
         >
           {fetchCards}
+        </View>
         </View>
       </ScrollView>
     )
@@ -91,18 +97,58 @@ class ThreeCard extends Component {
 }
 
 const styles = {
+    wholePage: {
+      marginTop: 80
+    },
+    container: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center"
+    },
     questionStyle: {
       marginTop: 40,
       color: 'white',
       textAlign: 'center',
       fontSize: 30
     },
-    pff: {
+    past: {
       color: 'white',
       textAlign: 'center',
       fontSize: 20,
-      marginTop: 20
+      marginTop: 20,
+      flexDirection: "column",
+      marginLeft: 15,
+    },
+    present: {
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 20,
+      marginTop: 20,
+      flexDirection: "column",
+      marginLeft: 55
+    },
+    future: {
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 20,
+      marginTop: 20,
+      marginLeft: 40,
+      flexDirection: "column",
+    },
+    button: {
+      textDecoration: "none",
+      height: 40,
+      width: 100,
+      marginTop: 15,
+      marginBottom: 10,
+      backgroundColor:'powderblue',
+      borderRadius: 10,
+      borderWidth: 1,
+      borderColor: '#fff',
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center"
     }
 }
 
-export default ThreeCard;
+export default ThreeCard

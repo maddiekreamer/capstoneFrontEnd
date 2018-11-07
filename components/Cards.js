@@ -5,16 +5,19 @@ import Card from "./Card"
 const Cards = ({ name, desc, img, type, toggleSelection, flipped, index }) => {
   pressedCard = () => {
     this.setState.tarotCards
-  };
+  }
 
   return (
-    <Card style={{ paddingTop: 5 }}>
+    <Card style={{paddingTop: 5}}>
       <View
         style={{
           width: 112,
           height: 200,
           margin: 5,
-          backgroundColor: "powderblue"
+          backgroundColor: "powderblue",
+          borderRadius: 10,
+          borderWidth: 1,
+          borderColor: '#fff',
         }}
         onTouchStart={toggleSelection}
       >
@@ -28,8 +31,9 @@ const styles = {
   imageStyle: {
     height: 200,
     flex: 1,
-    width: null
+    width: null,
+    borderRadius: 10
   }
 };
 
-export default Cards;
+export default Cards

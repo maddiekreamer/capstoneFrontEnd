@@ -22,4 +22,4 @@ const styles = {
   }
 }
 
-export default Footer;
+export default Footer
