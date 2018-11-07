@@ -11,7 +11,7 @@ class ThreeCard extends Component {
       displayText: "",
       showQuestion: false,
       selectedCards: [],
-      flipped: [false, false, false]
+      flipped: []
     };
   }
 
@@ -51,14 +51,19 @@ class ThreeCard extends Component {
       })
   }
 
+  toggleSelection = (index) => () => {
+      const flipped = this.state.flipped
+      flipped.push(index)
+      this.setState({ flipped: flipped })
+  }
+
   render() {
     const fetchCards = this.state.selectedCards
       ? this.state.selectedCards.map((cards, index) => {
-          return <Cards {...cards} index={index} flipped={this.state.flipped} toggleSelection={() => this.setState({ flipped: index })} />;
+          return <Cards {...cards} index={index} flipped={this.state.flipped} toggleSelection={this.toggleSelection(index)} />;
         })
       : "loading Cards";
 
-    console.log("state: ", this.state.question);
     return (
       <ScrollView>
         <Text style={{ marginTop: 40 }}>Think of a question...</Text>

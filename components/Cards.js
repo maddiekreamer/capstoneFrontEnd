@@ -21,7 +21,7 @@ const Cards = ({ name, desc, img, type, toggleSelection, flipped, index }) => {
         }}
         onTouchStart={toggleSelection}
       >
-        <Text>{index === flipped ? "SUCCESS" : "OH NOES " + flipped}</Text>
+      {flipped.indexOf(index) > -1 ? <Image style={styles.imageStyle} source={{uri: img}}/> : console.log('')}
       </View>
     </Card>
   );
