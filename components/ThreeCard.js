@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import { Text, ScrollView, TextInput, TouchableHighlight, View } from "react-native"
+import { Text, ScrollView, TextInput, TouchableHighlight, View, StyleSheet } from "react-native"
 import Cards from "./Cards.js"
 
-class ThreeCard extends Component {
+export default class ThreeCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -56,6 +56,18 @@ class ThreeCard extends Component {
       this.setState({ flipped: flipped })
   }
 
+  static navigationOptions = {
+    headerTitle: "T A R O T ∙ F Y",
+    headerStyle: {
+      backgroundColor: '#F8F8F8',
+    },
+    headerTintColor: '#121827',
+    headerTitleStyle: {
+      fontFamily: "Bodoni 72 Oldstyle",
+      fontSize: 22
+    },
+  };
+
   render() {
     const fetchCards = this.state.selectedCards
       ? this.state.selectedCards.map((cards, index) => {
@@ -64,8 +76,8 @@ class ThreeCard extends Component {
       : "Please wait, Tarotfy is thinking... "
 
     return (
-      <ScrollView>
-        <View style={styles.wholePage}>
+      <ScrollView contentContainerStyle="center" style={styles.wholePage}>
+        <View style={{marginTop: 80}}>
         <Text style={styles.questionStyle}>Think of a question...</Text>
         <TextInput
           style={{ height: 27, width: 315, marginLeft: 30, borderColor: "white", borderWidth: 1, color: "white", marginTop: 12, padding: 5, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 2, fontSize: 14 }}
@@ -96,9 +108,10 @@ class ThreeCard extends Component {
   }
 }
 
-const styles = {
+let styles = StyleSheet.create ({
     wholePage: {
-      marginTop: 80
+      backgroundColor: '#121827',
+      flex: 1
     },
     container: {
       flex: 1,
@@ -144,7 +157,6 @@ const styles = {
       fontFamily: "Bodoni 72 Oldstyle"
     },
     button: {
-      textDecoration: "none",
       height: 40,
       width: 100,
       marginTop: 15,
@@ -157,6 +169,4 @@ const styles = {
       justifyContent: "center",
       textAlign: "center"
     }
-}
-
-export default ThreeCard
+})
