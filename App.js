@@ -11,7 +11,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <Header headerText="T A R O T ∙ F Y"/>
         <ThreeCard/>
-        <Footer footerText="Copyright 2018"/>
+        <Footer footerText="Copyright ∙ 2018"/>
       </View>
     )
   }
