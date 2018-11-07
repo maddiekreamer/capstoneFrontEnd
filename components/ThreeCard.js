@@ -64,9 +64,9 @@ class ThreeCard extends Component {
 
     return (
       <ScrollView>
-        <Text style={{ marginTop: 40 }}>Think of a question...</Text>
+        <Text style={styles.questionStyle}>Think of a question...</Text>
         <TextInput
-          style={{ width: 300, borderColor: "black", borderWidth: 1 }}
+          style={{ width: 362, margin: 5, borderColor: "white", borderWidth: 1, alignItems: "center" }}
           value={this.state.question}
           onChangeText={event => this.handleQuestion(event)}
         />
@@ -74,14 +74,12 @@ class ThreeCard extends Component {
         <View>
           {this.state.showQuestion ? <Text>{this.state.question}</Text> : null}
         </View>
-        <Text style={styles.PPF}>PAST ∙ PRESENT ∙ FUTURE</Text>
-        
+        <Text style={styles.pff}>PAST PRESENT FUTURE</Text>
         <View
           style={{
             flex: 1,
             flexDirection: "row",
             justifyContent: "center",
-            // marginLeft: 3.5,
             marginTop: 75
           }}
         >
@@ -93,8 +91,17 @@ class ThreeCard extends Component {
 }
 
 const styles = {
-    PPF: {
-        fontSize: 24
+    questionStyle: {
+      marginTop: 40,
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 30
+    },
+    pff: {
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 20,
+      marginTop: 20
     }
 }
 
