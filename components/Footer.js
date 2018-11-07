@@ -17,8 +17,10 @@ const styles = {
     height: 50
   },
   textStyle: {
-    fontSize: 14,
+    fontSize: 16,
     marginBottom: 12,
+    color: '#121827',
+    fontFamily: "Bodoni 72 Oldstyle"
   }
 }
 

@@ -72,9 +72,9 @@ class ThreeCard extends Component {
           value={this.state.question}
           onChangeText={event => this.handleQuestion(event)}
         />
-        <View style={styles.container}><TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text>Enter</Text></TouchableHighlight></View>
+        <View style={styles.container}><TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1}}>Enter</Text></TouchableHighlight></View>
         <View>
-          {this.state.showQuestion ? <Text style={{ color: "white" }}>{this.state.displayText}</Text> : null}
+          {this.state.showQuestion ? <Text style={{ color: "white", fontSize: 30, textAlign: "center", marginTop: 15 }}>{this.state.displayText}</Text> : null}
         </View>
         <View style={{flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
         <Text style={styles.past}>PAST</Text>
@@ -98,7 +98,7 @@ class ThreeCard extends Component {
 
 const styles = {
     wholePage: {
-      marginTop: 80
+      marginTop: 90
     },
     container: {
       flex: 1,
@@ -109,7 +109,9 @@ const styles = {
       marginTop: 40,
       color: 'white',
       textAlign: 'center',
-      fontSize: 30
+      fontSize: 30,
+      fontFamily: "Bodoni 72 Oldstyle",
+      letterSpacing: 1
     },
     past: {
       color: 'white',
@@ -118,6 +120,8 @@ const styles = {
       marginTop: 20,
       flexDirection: "column",
       marginLeft: 15,
+      paddingLeft: 2,
+      fontFamily: "Bodoni 72 Oldstyle"
     },
     present: {
       color: 'white',
@@ -125,7 +129,9 @@ const styles = {
       fontSize: 20,
       marginTop: 20,
       flexDirection: "column",
-      marginLeft: 55
+      marginLeft: 55,
+      paddingLeft: 8,
+      fontFamily: "Bodoni 72 Oldstyle"
     },
     future: {
       color: 'white',
@@ -133,7 +139,9 @@ const styles = {
       fontSize: 20,
       marginTop: 20,
       marginLeft: 40,
+      paddingLeft: 4,
       flexDirection: "column",
+      fontFamily: "Bodoni 72 Oldstyle"
     },
     button: {
       textDecoration: "none",
@@ -141,10 +149,10 @@ const styles = {
       width: 100,
       marginTop: 15,
       marginBottom: 10,
-      backgroundColor:'powderblue',
+      backgroundColor:'#121827',
       borderRadius: 10,
       borderWidth: 1,
-      borderColor: '#fff',
+      borderColor: 'white',
       alignItems: "center",
       justifyContent: "center",
       textAlign: "center"

@@ -17,11 +17,11 @@ const Cards = ({ name, desc, img, type, toggleSelection, flipped, index }) => {
           backgroundColor: "powderblue",
           borderRadius: 10,
           borderWidth: 1,
-          borderColor: '#fff',
+          borderColor: 'gray',
         }}
         onTouchStart={toggleSelection}
       >
-      {flipped.indexOf(index) > -1 ? <Image style={styles.imageStyle} source={{uri: img}}/> : console.log('')}
+      {flipped.indexOf(index) > -1 ? <Image style={styles.imageStyle} source={{uri: img}}/> : <Image style={styles.imageStyle} source={require("../src/assets/cardBack.png")}/>}
       </View>
     </Card>
   )

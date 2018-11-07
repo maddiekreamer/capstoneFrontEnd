@@ -15,13 +15,12 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     height: 70,
-    paddingTop: 30,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
+    paddingTop: 30
   },
   textStyle: {
-    fontSize: 22
+    fontSize: 22,
+    color: '#121827',
+    fontFamily: "Bodoni 72 Oldstyle"
   },
 }
 
