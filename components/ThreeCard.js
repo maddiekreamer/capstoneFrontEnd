@@ -68,13 +68,13 @@ class ThreeCard extends Component {
         <View style={styles.wholePage}>
         <Text style={styles.questionStyle}>Think of a question...</Text>
         <TextInput
-          style={{ height: 27, width: 315, marginLeft: 30, borderColor: "white", borderWidth: 1, color: "white", marginTop: 12, padding: 5 }}
+          style={{ height: 27, width: 315, marginLeft: 30, borderColor: "white", borderWidth: 1, color: "white", marginTop: 12, padding: 5, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 2, fontSize: 14 }}
           value={this.state.question}
           onChangeText={event => this.handleQuestion(event)}
         />
-        <View style={styles.container}><TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1}}>Enter</Text></TouchableHighlight></View>
+        <View style={styles.container}><TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Ask</Text></TouchableHighlight></View>
         <View>
-          {this.state.showQuestion ? <Text style={{ color: "white", fontSize: 30, textAlign: "center", marginTop: 15 }}>{this.state.displayText}</Text> : null}
+          {this.state.showQuestion ? <Text style={{ color: "white", fontSize: 30, textAlign: "center", marginTop: 15, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>{this.state.displayText}</Text> : null}
         </View>
         <View style={{flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
         <Text style={styles.past}>PAST</Text>
@@ -98,7 +98,7 @@ class ThreeCard extends Component {
 
 const styles = {
     wholePage: {
-      marginTop: 90
+      marginTop: 80
     },
     container: {
       flex: 1,
