@@ -1,8 +1,6 @@
 import React, { Component } from "react"
-import { Text, View, Image } from "react-native"
-import CardSection from "./CardSection"
+import { View, Image } from "react-native"
 import Card from "./Card"
-import TarotCards from "./TarotCards"
 
 const Cards = ({ name, desc, img, type, toggleSelection, flipped, index }) => {
   pressedCard = () => {
@@ -28,7 +26,7 @@ const Cards = ({ name, desc, img, type, toggleSelection, flipped, index }) => {
 
 const styles = {
   imageStyle: {
-    height: 800,
+    height: 200,
     flex: 1,
     width: null
   }

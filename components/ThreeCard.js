@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Text, ScrollView, TextInput, Button, View } from "react-native";
-import Cards from "./Cards.js";
+import React, { Component } from "react"
+import { Text, ScrollView, TextInput, Button, View } from "react-native"
+import Cards from "./Cards.js"
 
 class ThreeCard extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       tarotCards: [],
       question: "",
@@ -12,27 +12,25 @@ class ThreeCard extends Component {
       showQuestion: false,
       selectedCards: [],
       flipped: []
-    };
+    }
   }
 
   handleQuestion = text => {
-    console.log("text: ", text);
     this.setState({
       question: text
-    });
-  };
+    })
+  }
 
   displayQuestion = () => {
-    console.log("name:", this.state.showQuestion);
     if (this.state.showQuestion == false) {
-      this.setState({ showQuestion: true });
+      this.setState({ showQuestion: true })
     } else {
-      this.setState({ showQuestion: false });
+      this.setState({ showQuestion: false })
     }
-  };
+  }
 
   componentDidMount() {
-    this.getCards();
+    this.getCards()
   }
 
   getCards = () => {
@@ -42,7 +40,7 @@ class ThreeCard extends Component {
         tarotCards: resp.result
       }))
       .then(this.selectCards)
-  };
+  }
 
   selectCards = () => {
       const selected = this.state.tarotCards.slice(0, 3)
@@ -60,9 +58,9 @@ class ThreeCard extends Component {
   render() {
     const fetchCards = this.state.selectedCards
       ? this.state.selectedCards.map((cards, index) => {
-          return <Cards {...cards} index={index} flipped={this.state.flipped} toggleSelection={this.toggleSelection(index)} />;
+          return <Cards {...cards} index={index} flipped={this.state.flipped} toggleSelection={this.toggleSelection(index)} />
         })
-      : "loading Cards";
+      : "Please wait, Tarotfy is thinking... "
 
     return (
       <ScrollView>
@@ -72,7 +70,7 @@ class ThreeCard extends Component {
           value={this.state.question}
           onChangeText={event => this.handleQuestion(event)}
         />
-        <Button onPress={this.displayQuestion} title="Enter" />
+        <Button onPress={this.displayQuestion} title="Enter"/>
         <View>
           {this.state.showQuestion ? <Text>{this.state.question}</Text> : null}
         </View>
@@ -83,24 +81,20 @@ class ThreeCard extends Component {
             flex: 1,
             flexDirection: "row",
             justifyContent: "center",
-            marginLeft: 3.5,
-            marginTop: 100
+            // marginLeft: 3.5,
+            marginTop: 75
           }}
         >
           {fetchCards}
         </View>
       </ScrollView>
-    );
+    )
   }
 }
 
 const styles = {
     PPF: {
-        fontSize: 20,
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignContent: "center"
+        fontSize: 24
     }
 }
 
