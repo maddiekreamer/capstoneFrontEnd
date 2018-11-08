@@ -21,7 +21,7 @@ export default class CardsList extends Component {
         //   .then(resp => resp.json())
         Promise.resolve(cards)
           .then(resp => this.setState({
-            tarotCards: resp.result.reverse()
+            tarotCards: resp.result
           }))
           .then(this.selectCards)
       }
@@ -54,7 +54,7 @@ export default class CardsList extends Component {
                         borderColor: '#feea65'
                     }}><Image style={styles.imageStyle} source={{ uri: card.img }}/>
                     </View>
-                    <ScrollView style={{ height: 200 }}>
+                    <ScrollView style={{ height: 50 }}>
                         <Text style={styles.descText}>{card.desc}</Text>
                     </ScrollView>
                     <View style={{ width: 340, borderWidth: 1, borderColor: '#feea65', margin: 30 }}></View>
