@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Text, ScrollView, TextInput, TouchableHighlight, View, StyleSheet } from "react-native"
+import { Text, ScrollView, View, StyleSheet } from "react-native"
 
 export default class ThreeCard extends Component {
   static navigationOptions = {
@@ -17,25 +17,16 @@ export default class ThreeCard extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle="center" style={styles.wholePage}>
-      <View style={styles.headerStyle}>
-        <Text style={styles.textStyle}>History of Tarot</Text>
-        <Text style={styles.questionStyle}>While the media tends to portray tarot cards as a form of fortune telling, they were not originally meant for mysticism. The first known Tarot Cards were called "carte da trionfi", or "cards of triumph", played by Italian Aristocrats before the large spread over Europe. However, tarot card readings are a form of cartomancy, or fortune-telling/divination using a deck of cards.</Text>
-        <Text style={styles.questionStyle}>Tarot Cards are meant to reveal personal truth. Cards are their meanings are different for everyone. In readings, card meanings are explained, but the interpretation is up to you. During readings, the receiver should search for meaning, but not take too literally. For example, if you receive "The Death" card, this does not mean you are going to die. It could possibly mean a career or relationship will end.</Text>
-        <Text style={styles.questionStyle}>During readings, the receiver is to go in with a question or something that has been laying heavy on their heart. When ready, the reader will reveal cards one by one. The cards are split into two categories, Major Arcana versus Minor Arcana. The majors are also known as "trump cards", where the minor are called "pip cards". The minor cards are divided into four additional categories, wands, pentacles, cups, and swords. Each of these categories also contain court cards, all with different meanings. Well, what are you waiting for? Let's play! </Text>
-      </View>
+        <View style={styles.headerStyle}>
+          <Text style={styles.textStyle}>History of Tarot</Text>
+          <Text style={styles.questionStyle}>While the media tends to portray tarot cards as a form of fortune telling, they were not originally meant for mysticism. The first known Tarot Cards were called "carte da trionfi", or "cards of triumph", played by Italian Aristocrats before the large spread over Europe. However, tarot card readings are a form of cartomancy, or fortune-telling/divination using a deck of cards.</Text>
+          <Text style={styles.questionStyle}>Tarot Cards are meant to reveal personal truth. Cards are their meanings are different for everyone. In readings, card meanings are explained, but the interpretation is up to you. During readings, the receiver should search for meaning, but not take too literally. For example, if you receive "The Death" card, this does not mean you are going to die. It could possibly mean a career or relationship will end.</Text>
+          <Text style={styles.questionStyle}>During readings, the receiver is to go in with a question or something that has been laying heavy on their heart. When ready, the reader will reveal cards one by one. The cards are split into two categories, Major Arcana versus Minor Arcana. The majors are also known as "trump cards", where the minor are called "pip cards". The minor cards are divided into four additional categories, wands, pentacles, cups, and swords. Each of these categories also contain court cards, all with different meanings. Well, what are you waiting for? Let's play! </Text>
+        </View>
       </ScrollView>
     )
   }
 }
-
-// Major Arcana vs. Minor Arcana
-// Major = trump cards
-// Minor = pip cards
-// Wands
-// Pentacles
-// Cups
-// Swords
-// Court cards
 
 let styles = StyleSheet.create ({
     wholePage: {

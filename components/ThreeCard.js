@@ -65,8 +65,8 @@ export default class ThreeCard extends Component {
     headerTitleStyle: {
       fontFamily: "Bodoni 72 Oldstyle",
       fontSize: 22
-    },
-  };
+    }
+  }
 
   render() {
     const fetchCards = this.state.selectedCards
@@ -78,30 +78,32 @@ export default class ThreeCard extends Component {
     return (
       <ScrollView contentContainerStyle="center" style={styles.wholePage}>
         <View style={{marginTop: 80}}>
-        <Text style={styles.questionStyle}>Think of a question...</Text>
-        <TextInput
-          style={{ height: 27, width: 315, marginLeft: 30, borderColor: "white", borderWidth: 1, color: "white", marginTop: 12, padding: 5, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 2, fontSize: 14 }}
-          value={this.state.question}
-          onChangeText={event => this.handleQuestion(event)}
-        />
-        <View style={styles.container}><TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Ask</Text></TouchableHighlight></View>
-        <View>
-          {this.state.showQuestion ? <Text style={{ color: "white", fontSize: 30, textAlign: "center", marginTop: 15, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>{this.state.displayText}</Text> : null}
-        </View>
-        <View style={{flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-        <Text style={styles.past}>PAST</Text>
-        <Text style={styles.present}>PRESENT</Text>
-        <Text style={styles.future}>FUTURE</Text>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
-          {fetchCards}
-        </View>
+          <Text style={styles.questionStyle}>Think of a question...</Text>
+          <TextInput
+            style={{ height: 27, width: 315, marginLeft: 30, borderColor: "white", borderWidth: 1, color: "white", marginTop: 12, padding: 5, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 2, fontSize: 14 }}
+            value={this.state.question}
+            onChangeText={event => this.handleQuestion(event)}
+          />
+          <View style={styles.container}>
+            <TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Ask</Text></TouchableHighlight>
+          </View>
+          <View>
+            {this.state.showQuestion ? <Text style={{ color: "white", fontSize: 30, textAlign: "center", marginTop: 15, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>{this.state.displayText}</Text> : null}
+          </View>
+          <View style={{flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+            <Text style={styles.past}>PAST</Text>
+            <Text style={styles.present}>PRESENT</Text>
+            <Text style={styles.future}>FUTURE</Text>
+          </View>
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            {fetchCards}
+          </View>
         </View>
       </ScrollView>
     )

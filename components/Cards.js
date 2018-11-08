@@ -17,11 +17,11 @@ const Cards = ({ name, desc, img, type, toggleSelection, flipped, index }) => {
           backgroundColor: "powderblue",
           borderRadius: 10,
           borderWidth: 1,
-          borderColor: 'gray',
+          borderColor: 'gray'
         }}
         onTouchStart={toggleSelection}
       >
-      {flipped.indexOf(index) > -1 ? <Image style={styles.imageStyle} source={{uri: img}}/> : <Image style={styles.imageStyle} source={require("../src/assets/cardBack.png")}/>}
+        {flipped.indexOf(index) > -1 ? <Image style={styles.imageStyle} source={{uri: img}}/> : <Image style={styles.imageStyle} source={require("../src/assets/cardBack.png")}/>}
       </View>
     </Card>
   )
@@ -34,6 +34,6 @@ const styles = {
     width: null,
     borderRadius: 10
   }
-};
+}
 
 export default Cards

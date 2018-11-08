@@ -15,22 +15,22 @@ import Instructions from '../components/Instructions'
   export default createBottomTabNavigator(
     {
       "Copyright ∙ 2018" : HomeStack
-    },{
-        tabBarOptions : {
-          activeTintColor: '#121827',
-          inactiveTintColor: '#121827',
-          labelStyle: {
-            fontSize: 18,
-            fontFamily: "Bodoni 72 Oldstyle",
-            letterSpacing: 1,
-          },
-          style: {
-            backgroundColor: "#F8F8F8",
-            justifyContent: "center",
-            alignItems: "center",
-            height: 30
-           
-          }
+    },
+    {
+      tabBarOptions : {
+        activeTintColor: '#121827',
+        inactiveTintColor: '#121827',
+        labelStyle: {
+          fontSize: 18,
+          fontFamily: "Bodoni 72 Oldstyle",
+          letterSpacing: 1
+        },
+        style: {
+          backgroundColor: "#F8F8F8",
+          justifyContent: "center",
+          alignItems: "center",
+          height: 30
         }
+      }
     }
   )

@@ -1,28 +1,28 @@
 import React, { Component } from "react"
-import { Text, ScrollView, TextInput, TouchableHighlight, View, StyleSheet } from "react-native"
+import { Text, ScrollView, View, StyleSheet } from "react-native"
 
 export default class ThreeCard extends Component {
   static navigationOptions = {
     headerTitle: "T A R O T ∙ F Y",
     headerStyle: {
-      backgroundColor: '#F8F8F8',
+      backgroundColor: '#F8F8F8'
     },
     headerTintColor: '#121827',
     headerTitleStyle: {
       fontFamily: "Bodoni 72 Oldstyle",
       fontSize: 22
-    },
-  };
+    }
+  }
 
   render() {
     return (
       <ScrollView contentContainerStyle="center" style={styles.wholePage}>
-      <View style={styles.headerStyle}>
-        <Text style={styles.textStyle}>Instructions</Text>
-        <Text style={styles.questionStyle}>1. Think of a question or problem that has been weighing on you</Text>
-        <Text style={styles.questionStyle}>2. Enter question into input box, then click "Ask"</Text>
-        <Text style={styles.questionStyle}>3. Reveal cards one-by-one, going from left to right</Text>
-      </View>
+        <View style={styles.headerStyle}>
+          <Text style={styles.textStyle}>Instructions</Text>
+          <Text style={styles.questionStyle}>1. Think of a question or problem that has been weighing on you</Text>
+          <Text style={styles.questionStyle}>2. Enter question into input box, then click "Ask"</Text>
+          <Text style={styles.questionStyle}>3. Reveal cards one-by-one, going from left to right</Text>
+        </View>
       </ScrollView>
     )
   }

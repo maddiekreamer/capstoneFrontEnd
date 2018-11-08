@@ -5,4 +5,4 @@ const Card = props => {
   return <View>{props.children}</View>
 }
 
-export default Card;
+export default Card
