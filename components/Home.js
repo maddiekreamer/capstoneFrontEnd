@@ -20,9 +20,27 @@ export default class Home extends React.Component {
       <ScrollView contentContainerStyle="center" style={styles.wholePage}>
         <View style={styles.headerStyle}>
           <Text style={styles.textStyle}>Welcome</Text>
-          <View style={styles.container}><TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate("Instructions")}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Instructions</Text></TouchableHighlight></View>
-          <View style={styles.container}><TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate("TarotHistory")}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>History of Tarot</Text></TouchableHighlight></View>
-          <View style={styles.container}><TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate("ThreeCard")}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Ask a Question</Text></TouchableHighlight></View>        
+          <View style={{ width: 340, borderWidth: 1, borderColor: '#feea65', marginBottom: 13 }}></View>
+          <View style={styles.container}>
+            <TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate("ThreeCard")}>
+              <Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Ask a Question</Text>
+            </TouchableHighlight>
+          </View>
+          <View style={styles.container}>
+            <TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate("Instructions")}>
+              <Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Instructions</Text>
+            </TouchableHighlight>
+          </View>
+          <View style={styles.container}>
+            <TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate("TarotHistory")}>
+              <Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>History of Tarot</Text>
+            </TouchableHighlight>
+          </View> 
+          {/* <View style={styles.container}>
+            <TouchableHighlight style={styles.button} onPress={() => this.props.navigation.navigate("CardsList")}>
+              <Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Explore Cards</Text>
+            </TouchableHighlight>
+          </View>  */}
         </View>
       </ScrollView>
     )

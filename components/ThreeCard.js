@@ -69,7 +69,7 @@ export default class ThreeCard extends Component {
   }
 
   render() {
-    const fetchCards = this.state.selectedCards
+    const fetchImage = this.state.selectedCards
       ? this.state.selectedCards.map((cards, index) => {
           return <Cards {...cards} index={index} flipped={this.state.flipped} toggleSelection={this.toggleSelection(index)} />
         })
@@ -85,7 +85,9 @@ export default class ThreeCard extends Component {
             onChangeText={event => this.handleQuestion(event)}
           />
           <View style={styles.container}>
-            <TouchableHighlight style={styles.button} onPress={this.displayQuestion}><Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Ask</Text></TouchableHighlight>
+            <TouchableHighlight style={styles.button} onPress={this.displayQuestion}>
+              <Text style={{fontSize: 20, color: '#feea65', fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>Ask</Text>
+            </TouchableHighlight>
           </View>
           <View>
             {this.state.showQuestion ? <Text style={{ color: "white", fontSize: 30, textAlign: "center", marginTop: 15, fontFamily: "Bodoni 72 Oldstyle", letterSpacing: 1 }}>{this.state.displayText}</Text> : null}
@@ -102,7 +104,7 @@ export default class ThreeCard extends Component {
               justifyContent: "center",
             }}
           >
-            {fetchCards}
+            {fetchImage}
           </View>
         </View>
       </ScrollView>

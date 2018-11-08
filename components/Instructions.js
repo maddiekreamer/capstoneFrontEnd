@@ -19,6 +19,7 @@ export default class ThreeCard extends Component {
       <ScrollView contentContainerStyle="center" style={styles.wholePage}>
         <View style={styles.headerStyle}>
           <Text style={styles.textStyle}>Instructions</Text>
+          <View style={{ width: 340, borderWidth: 1, borderColor: '#feea65', marginBottom: 13 }}></View>
           <Text style={styles.questionStyle}>1. Think of a question or problem that has been weighing on you</Text>
           <Text style={styles.questionStyle}>2. Enter question into input box, then click "Ask"</Text>
           <Text style={styles.questionStyle}>3. Reveal cards one-by-one, going from left to right</Text>
