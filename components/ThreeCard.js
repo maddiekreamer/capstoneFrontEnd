@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Text, ScrollView, TextInput, TouchableHighlight, View, StyleSheet } from "react-native"
 import Cards from "./Cards.js"
+import cards from '../cards.json'
 
 export default class ThreeCard extends Component {
   constructor(props) {
@@ -35,8 +36,10 @@ export default class ThreeCard extends Component {
   }
 
   getCards = () => {
-    fetch("https://tarot-card-information.herokuapp.com/")
-      .then(resp => resp.json())
+    
+    // fetch("https://tarot-card-information.herokuapp.com/")
+    //   .then(resp => resp.json())
+    Promise.resolve(cards)
       .then(resp => this.setState({
         tarotCards: resp.result
       }))
@@ -71,8 +74,9 @@ export default class ThreeCard extends Component {
   render() {
     const fetchImage = this.state.selectedCards
       ? this.state.selectedCards.map((cards, index) => {
-          return <Cards {...cards} index={index} flipped={this.state.flipped} toggleSelection={this.toggleSelection(index)} />
+          return (<Cards {...cards} index={index} flipped={this.state.flipped} toggleSelection={this.toggleSelection(index)} /> )
         })
+
       : "Please wait, Tarotfy is thinking... "
 
     return (

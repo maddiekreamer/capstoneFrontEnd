@@ -1,17 +1,30 @@
 import React, { Component } from "react"
-import { View, Image, Text, StyleSheet, CardSection } from "react-native"
-import {Card} from "./Card"
+import { View, Image, Text, StyleSheet, ScrollView } from "react-native"
+import cards from '../cards.json'
+import Card from './Card'
 
 export default class CardsList extends Component {
     constructor(props) {
-        super(props),
-        this.props = {
-            name: '',
-            img: '',
-            type: '',
-            desc: ''
+        super(props)
+        this.state = {
+            tarotCards: []
         } 
-    } 
+    }
+    
+    componentDidMount() {
+        this.getCards()
+      }
+    
+      getCards = () => {
+        
+        // fetch("https://tarot-card-information.herokuapp.com/")
+        //   .then(resp => resp.json())
+        Promise.resolve(cards)
+          .then(resp => this.setState({
+            tarotCards: resp.result.reverse()
+          }))
+          .then(this.selectCards)
+      }
 
 
     static navigationOptions = {
@@ -26,18 +39,39 @@ export default class CardsList extends Component {
         }
     }
 
+    populateCards = () => {
+        return this.state.tarotCards.map((card) => {
+            console.log(card)
+            return <View style={styles.container}>
+                        <Text style={styles.nameStyle}>{card.name}</Text>
+                        <Text style={styles.typeStyle}>{card.type}</Text>
+                    <View style={{
+                        width: 112,
+                        height: 200,
+                        margin: 5,
+                        borderRadius: 10,
+                        borderWidth: 1,
+                        borderColor: '#feea65'
+                    }}><Image style={styles.imageStyle} source={{ uri: card.img }}/>
+                    </View>
+                    <ScrollView style={{ height: 200 }}>
+                        <Text style={styles.descText}>{card.desc}</Text>
+                    </ScrollView>
+                    <View style={{ width: 340, borderWidth: 1, borderColor: '#feea65', margin: 30 }}></View>
+                    </View>
+        })
+    }
+
     render () {
+        
         return (
-            <Card style={{ paddingTop: 5 }}>
-                <CardSection>
-                    <Text style={styles.headerStyle}>{this.props.name}</Text>
-                </CardSection>
-                <Image style={styles.imageStyle} source={{ uri: this.props.img }}/>
-                <CardSection>
-                    <Text style={styles.descText}>{this.props.type}</Text>
-                    <Text style={styles.descText}>{this.props.desc}</Text>
-                </CardSection>
-            </Card>
+            <ScrollView contentContainerStyle="center" style={styles.wholePage}> 
+            <View style={styles.headerStyle}>
+                <Text style={styles.textStyle}>Explore Cards</Text>
+                <View style={{ width: 340, borderWidth: 1, borderColor: '#feea65', marginBottom: 30 }}></View>
+                {this.populateCards()}
+                </View>
+            </ScrollView>
         )
     }
 }
@@ -55,11 +89,24 @@ let styles = StyleSheet.create ({
     headerStyle: {
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: 150,
+        paddingTop: 30,
         paddingBottom: 30
     },
+    nameStyle: {
+        fontSize: 28,
+        color: "white",
+        fontFamily: "Bodoni 72 Oldstyle",
+        letterSpacing: 1.5
+    },
+    typeStyle: {
+        fontSize: 18,
+        color: "white",
+        fontFamily: "Bodoni 72 Oldstyle",
+        letterSpacing: 1.5,
+        marginBottom: 10
+    },
     textStyle: {
-        fontSize: 70,
+        fontSize: 55,
         color: "white",
         fontFamily: "Bodoni 72 Oldstyle",
         fontStyle: 'italic',
@@ -85,23 +132,18 @@ let styles = StyleSheet.create ({
         fontSize: 18,
         fontWeight: "bold"
     },
-    thumbnailStyle: {
-        height: 80,
-        width: 80,
-        borderRadius: 2
-    },
-    imageContainerStyle: {
-        justifyContent: "center",
-        alignItems: "center",
-        marginLeft: 0,
-        marginRight: 0
-    },
     imageStyle: {
         height: 450,
         flex: 1,
-        width: null
+        width: null,
+        marginBottom: 10
     },
     descText: {
-        marginLeft: 20
+        fontSize: 12,
+        color: "white",
+        fontFamily: "Bodoni 72 Oldstyle",
+        letterSpacing: 1.5,
+        textAlign: 'justify',
+        marginTop: 10
     }
 })

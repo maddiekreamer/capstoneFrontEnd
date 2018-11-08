@@ -4,14 +4,14 @@ import ThreeCard from '../components/ThreeCard'
 import Home from '../components/Home'
 import TarotHistory from '../components/TarotHistory'
 import Instructions from '../components/Instructions'
-// import CardsList from '../components/CardsList'
+import CardsList from '../components/CardsList'
 
   const HomeStack = createStackNavigator({
     Home: Home,
     ThreeCard: ThreeCard,
     TarotHistory: TarotHistory,
     Instructions: Instructions,
-    // CardsList: CardsList
+    CardsList: CardsList
   })
 
   export default createBottomTabNavigator(
