@@ -17,14 +17,12 @@ export default class ThreeCard extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle="center" style={styles.wholePage}>
-        <View style={{marginTop: 80}}>
-        <Text style={styles.questionStyle}>Think of a question...</Text>
-        <View style={{flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-        <Text style={styles.past}>PAST</Text>
-        <Text style={styles.present}>PRESENT</Text>
-        <Text style={styles.future}>FUTURE</Text>
-        </View>
-        </View>
+      <View style={styles.headerStyle}>
+        <Text style={styles.textStyle}>Instructions</Text>
+        <Text style={styles.questionStyle}>1. Think of a question or problem that has been weighing on you</Text>
+        <Text style={styles.questionStyle}>2. Enter question into input box, then click "Ask"</Text>
+        <Text style={styles.questionStyle}>3. Reveal cards one-by-one, going from left to right</Text>
+      </View>
       </ScrollView>
     )
   }
@@ -40,55 +38,29 @@ let styles = StyleSheet.create ({
       alignItems: "center",
       justifyContent: "center"
     },
-    questionStyle: {
-      marginTop: 40,
-      color: 'white',
-      textAlign: 'center',
-      fontSize: 30,
-      fontFamily: "Bodoni 72 Oldstyle",
-      letterSpacing: 1
-    },
-    past: {
-      color: 'white',
-      textAlign: 'center',
-      fontSize: 20,
-      marginTop: 20,
-      flexDirection: "column",
-      marginLeft: 15,
-      paddingLeft: 2,
-      fontFamily: "Bodoni 72 Oldstyle"
-    },
-    present: {
-      color: 'white',
-      textAlign: 'center',
-      fontSize: 20,
-      marginTop: 20,
-      flexDirection: "column",
-      marginLeft: 55,
-      paddingLeft: 8,
-      fontFamily: "Bodoni 72 Oldstyle"
-    },
-    future: {
-      color: 'white',
-      textAlign: 'center',
-      fontSize: 20,
-      marginTop: 20,
-      marginLeft: 40,
-      paddingLeft: 4,
-      flexDirection: "column",
-      fontFamily: "Bodoni 72 Oldstyle"
-    },
-    button: {
-      height: 40,
-      width: 100,
-      marginTop: 15,
-      marginBottom: 10,
-      backgroundColor:'#121827',
-      borderRadius: 10,
-      borderWidth: 1,
-      borderColor: 'white',
-      alignItems: "center",
+    headerStyle: {
       justifyContent: "center",
-      textAlign: "center"
+      alignItems: "center",
+      paddingTop: 150,
+      paddingBottom: 30
+    },
+    textStyle: {
+      fontSize: 70,
+      color: "white",
+      fontFamily: "Bodoni 72 Oldstyle",
+      fontStyle: 'italic',
+      letterSpacing: 1.5,
+      marginBottom: 13
+    },
+    questionStyle: {
+      color: 'white',
+      textAlign: 'left',
+      fontSize: 22,
+      fontFamily: "Bodoni 72 Oldstyle",
+      letterSpacing: 1,
+      paddingTop: 10,
+      marginHorizontal: 32,
+      textAlign: "justify",
+      paddingBottom: 5
     }
 })
